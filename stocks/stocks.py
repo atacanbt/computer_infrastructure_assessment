@@ -17,7 +17,7 @@ filename = dt.datetime.now()
 # Create a string from the current date and time
 filename = filename.strftime("%Y%m%d_%H%M%S") 
 # Prepend the path to the filename and append the file extension
-filename = '../data/stocks/' + filename + ".csv"
+filename = 'data/stocks/' + filename + ".csv"
 
 # Save the data to a CSV file
 df['Close'].to_csv(filename)
