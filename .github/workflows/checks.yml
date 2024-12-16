@@ -12,7 +12,7 @@ jobs:
               run: curl --version
             - name: Test wget
               run: wget --version
-            - name: Test fortune
-              run: fortune
             - name: Output path
               run: echo "$PATH"
+            - name: Test fortune
+              run: /usr/games/fortune
