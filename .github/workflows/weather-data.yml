@@ -1,15 +1,15 @@
-name: Waether data for Athenry from Met Éireann
+name: Weather Data for Athenry from Met Éireann
 
 on:
   schedule:
-    - cron: '0 10 * * *' # Runs every day at 10 am
+    - cron: '0 10 * * *' # Runs every day at 10 am UTC
   workflow_dispatch: # Allows manual trigger
 
 permissions:
   contents: write # Allows push access to the repository
 
 jobs:
-  fortune-cowsay:
+  weather-data-fetch:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,24 +17,23 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    # Step 2: Execute the Python script to get the weather data
-    - name: Data pull
+    # Step 2: Make sure weather.sh is executable and run it
+    - name: Data Pull
       run: |
+        chmod +x ./weather.sh
         ./weather.sh 
 
-    # Step 3: Run fortune and cowsay, and save the output to a timestamped file
-    - name: Run fortune and cowsay
-      run: |
-        mkdir -p data/fortunes
-        fortune | cowsay > data/fortunes/`date +"%Y%m%d_%H%M%S".txt`
-
-    # Step 4: Commit and push the changes
+    # Step 3: Commit and push the changes
     - name: Commit and Push
-      env:
-        TIMESTAMP: ${{ steps.run-fortune-cowsay.outputs.timestamp }}
       run: |
+        # Create a timestamp for the commit message
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        
+        # Configure Git user info
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Stage, commit, and push all changes
         git add .
-        git commit -m "Added daily weather data: `"%Y%m%d_%H%M%S`"
+        git commit -m "Added daily weather data: ${TIMESTAMP}"
         git push
