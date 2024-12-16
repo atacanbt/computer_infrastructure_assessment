@@ -27,7 +27,8 @@ jobs:
     # Step 3: Run fortune and cowsay, and save the output to a timestamped file
     - name: Run fortune and cowsay
       run: |
-        fortune | cowsay > data/fortune/`date +"%Y%m%d_%H%M%S".txt`
+        mkdir -p data/fortunes
+        fortune | cowsay > data/fortunes/`date +"%Y%m%d_%H%M%S".txt`
 
     # Step 4: Commit and push the changes
     - name: Commit and Push
