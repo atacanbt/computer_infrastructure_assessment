@@ -37,6 +37,6 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/fortune/`date +"%Y%m%d_%H%M%S".txt`
+        git add data/fortunes/`date +"%Y%m%d_%H%M%S".txt`
         git commit -m "Added fortune file: `date +"%Y%m%d_%H%M%S".txt`"
         git push
