@@ -31,7 +31,7 @@ jobs:
 
     # Step 4: Run the stocks.py script
     - name: Run stocks.py script
-      run: python stocks/stocks.py
+      run: python lecture_files/stocks/stocks.py
 
     # Step 5: Configure Git user for pushing changes
     - name: Configure Git user
