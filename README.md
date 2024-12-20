@@ -52,7 +52,6 @@ Now that you have everything set up, you can run the project in VSCode:
 1. Open the terminal in VSCode.
 2. Make sure your environment (e.g., `myenv`) is activated, if it’s not already:
    ```bash
-   source venv/bin/activate  # For virtualenv
    conda activate myenv      # For conda
    ```
 3. Run the script:
@@ -60,23 +59,16 @@ Now that you have everything set up, you can run the project in VSCode:
    python lecture_files/stocks/stocks.py
    ```
 
-### 5. Running Jupyter Notebooks
+## Running Jupyter Notebooks
 
 <a target="_blank" href="https://colab.research.google.com/github/atacanbt/computer_infrastructure_assessment/blob/main/weather.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-If you want to run the Jupyter notebooks (weather.ipynb):
+If you want to run the Jupyter notebooks (weather.ipynb) where you can see my analysis on weather data:
 
 1. Run the notebook in Visual Studio Code
 2. Alternatively, you can run the notebook on web page through Google Colab by clicking on the badge above. 
 
-### 6. Running the project on GitHub Codespaces
-
-If you want to run the project on GitHub Codespaces, open the repository in Codespaces, and the environment will be set up automatically. You can then run the scripts without any additional setup.
-
-
-- **Weather Data Collection**: Pulls real-time weather data from Met Eireann using the `weather.sh` script.
-- **Weekly Tasks**: The `weather.ipynb` notebook contains tasks for data analysis for the first 9 weeks.
-- **Automation**: Automates weather data collection and analysis.
-
+### Author
+Atacan Buyuktalas - atacanbuyuktalas@gmail.com
