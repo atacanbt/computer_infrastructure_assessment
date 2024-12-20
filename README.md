@@ -10,14 +10,16 @@ This repository contains the Computer Infrastructure module's code, scripts and 
 
 ## Project Structure
 computer_infrastructure_assessment/
-├── data/                   # Contains input files, datasets, and configuration files  
-├── lecture_files/          # Stores all work made during lectures  
-├── weather.ipynb           # Contains the first 9 weeks of weekly tasks 
-├── weather.sh              # Script to pull weather data from Met Eireann  
-├── .github/                # Stores workflows for GitHub Actions  
-├── requirements.txt        # Python dependencies for running the scripts  
-├── README.md               # Documentation for the repository  
-├── .gitignore              # Files and directories to be ignored by Git  
+
+
+- data/                   # Contains input files, datasets, and configuration files
+- lecture_files/          # Stores all work made during lectures
+- weather.ipynb           # Contains the first 9 weeks of weekly tasks
+- weather.sh              # Script to pull weather data from Met Eireann
+- .github/                # Stores workflows for GitHub Actions
+- requirements.txt        # Python dependencies for running the scripts
+- README.md               # Documentation for the repository
+- .gitignore              # Files and directories to be ignored by Git  
 
 ## Getting Started
 
