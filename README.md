@@ -2,24 +2,17 @@
 
 This repository contains the Computer Infrastructure module's code, scripts and documentation. This repository is the base for three automated workflows (GitHub Actions). 
 
+
+<img src="https://github.com/atacanbt/computer_infrastructure_assessment/blob/main/img/automated_workflow_high_res.png?raw=true" width="900" height="800">
+
+
 ## Automated Workflows
-- weather.sh: This Bash script downloads weather data from the Met Éireann API, saving it as a JSON file with a timestamped filename in the data/weather/ directory.
-- stocks.py: Python script downloads stock data for NVDA, AAPL, and GOOG from Yahoo Finance, saves the closing prices as a CSV file with a timestamped filename in the data/stocks/ directory, and is intended to run daily at 10:00 AM via a cron job.
-- **Automation**: Automate system checks and reports using scripts.
-- **Reporting**: Generate reports for system status and potential issues.
-
-## Project Structure
-computer_infrastructure_assessment/
-
-
-- data/                   # Contains input files, datasets, and configuration files
-- lecture_files/          # Stores all work made during lectures
-- weather.ipynb           # Contains the first 9 weeks of weekly tasks
-- weather.sh              # Script to pull weather data from Met Eireann
-- .github/                # Stores workflows for GitHub Actions
-- requirements.txt        # Python dependencies for running the scripts
-- README.md               # Documentation for the repository
-- .gitignore              # Files and directories to be ignored by Git  
+- weather.sh:
+   - This Bash script downloads weather data from the Met Éireann API, saving it as a JSON file with a timestamped filename in the data/weather/ directory.
+- stocks.py:
+   - Python script downloads stock data for NVDA, AAPL, and GOOG from Yahoo Finance, saves the closing prices as a CSV file with a timestamped filename in the data/stocks/   directory, and is intended to run daily at 10:00 AM via a cron job.
+- Fortune Cowsay:
+   - The “Fortune Cowsay Workflow” runs daily via a cron schedule, installs the fortune and cowsay utilities, generates a random fortune, saves it to a txt file, and commits the file back to the repository.
 
 ## Getting Started
 
@@ -31,43 +24,17 @@ First, clone the repository to your local machine:
 git clone https://github.com/atacanbt/computer_infrastructure_assessment.git
 cd computer_infrastructure_assessment
 ```
+### 2. Set up Python environment using Conda
 
-### 2. Set up Python environment
-
-If you are using Python locally, creating a virtual environment for your project is a good practice.
-
-#### Option 1: Using Virtualenv (Recommended for local machines)
-
-1. Install `virtualenv` if it is not already installed:
-   ```bash
-   pip install virtualenv
-   ```
-
-2. Create a new virtual environment:
-   ```bash
-   python -m venv venv
-   ```
-
-3. Activate the virtual environment:
-   - On macOS/Linux:
-     ```bash
-     source venv/bin/activate
-     ```
-   - On Windows:
-     ```bash
-     venv\Scripts\activate
-     ```
-
-#### Option 2: Using Conda (Alternative)
-
-If you prefer using Conda, follow these steps:
-
-1. Create a new Conda environment:
+1. Install [Anaconda](https://www.anaconda.com/download)
+2. Install [Visual Studio Code](https://code.visualstudio.com/)
+   
+3. Create a new Conda environment:
    ```bash
    conda create --name myenv python=3.8
    ```
 
-2. Activate the Conda environment:
+4. Activate the Conda environment:
    ```bash
    conda activate myenv
    ```
@@ -82,7 +49,7 @@ pip install -r requirements.txt
 
 Now that you have everything set up, you can run the project in VSCode:
 
-1. Open the terminal in VSCode (Ctrl + ~ or Cmd + ~ on macOS).
+1. Open the terminal in VSCode.
 2. Make sure your environment (e.g., `myenv`) is activated, if it’s not already:
    ```bash
    source venv/bin/activate  # For virtualenv
@@ -90,29 +57,25 @@ Now that you have everything set up, you can run the project in VSCode:
    ```
 3. Run the script:
    ```bash
-   python weather.py
+   python lecture_files/stocks/stocks.py
    ```
 
-### 5. (Optional) Running Jupyter Notebooks
+### 5. Running Jupyter Notebooks
 
-If you want to run the Jupyter notebooks (weather.ipynb), you can launch the Jupyter notebook environment from the terminal:
+<a target="_blank" href="https://colab.research.google.com/github/atacanbt/computer_infrastructure_assessment/blob/main/weather.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
-1. Install Jupyter in your Conda/virtual environment (if not already installed):
-   ```bash
-   pip install jupyter
-   ```
+If you want to run the Jupyter notebooks (weather.ipynb):
 
-2. Start Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-   This will open a new browser window where you can navigate to the `weather.ipynb` file and run the notebook.
+1. Run the notebook in Visual Studio Code
+2. Alternatively, you can run the notebook on web page through Google Colab by clicking on the badge above. 
 
 ### 6. Running the project on GitHub Codespaces
 
 If you want to run the project on GitHub Codespaces, open the repository in Codespaces, and the environment will be set up automatically. You can then run the scripts without any additional setup.
 
-## Features
+
 - **Weather Data Collection**: Pulls real-time weather data from Met Eireann using the `weather.sh` script.
 - **Weekly Tasks**: The `weather.ipynb` notebook contains tasks for data analysis for the first 9 weeks.
 - **Automation**: Automates weather data collection and analysis.
